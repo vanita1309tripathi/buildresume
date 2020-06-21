@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+    <script>
+        // var rowcount = 3;
+        // function myCreatefun() {
+        //     var Class = prompt("Enter your class ");
+        //     var year = prompt("Enter year ");
+        //     var board = prompt("Enter Board/University ");
+        //     var per = prompt("Enter your percentage ");
+        //     if (Class != null) {
+        //         var table = document.getElementById("myTable");
+        //         var row = table.insertRow(++rowcount);
+        //         var cell1 = row.insertCell(0);
+        //         var cell2 = row.insertCell(1);
+        //         var cell3 = row.insertCell(2);
+        //         var cell4 = row.insertCell(3);
+
+        //         cell1.innerHTML = Class.fontsize(4);
+        //         cell2.innerHTML = year.fontsize(4);
+        //         cell3.innerHTML = board.fontsize(4);
+        //         cell4.innerHTML = per.fontsize(4);
+
+
+        //     } else {
+        //         alert("Please Enter your class");
+        //     }
+        // }
+        // function deleteFun() {
+        //     documnent.getElementById("myTable").deleteRow(rowcount);
+        //     --rowcount;
+        // }
+
+        function genpdf() {
+            var doc = new jsPDF();
+
+            var img = 'data:image/png;base64,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';
+            doc.addImage(img, 'JPEG', 10, 13, 25, 25);
+
+            doc.setFontType("bold");
+            doc.text(40, 22, document.getElementById("username").value);
+
+            doc.setFontType("normal");
+            doc.setFontSize(12);
+            doc.text(40, 28, document.getElementById("address").value);
+
+            doc.setFontType("normal");
+            doc.setFontSize(10);
+            doc.text(160, 22, "+91-" + document.getElementById("inputcontact").value, 'center');
+            doc.text(160, 28, document.getElementById("inputEmail4").value, 'center');
+            doc.text(160, 34, document.getElementById("inputLinkedin").value,'center');
+            // doc.text(120, 42, "Address : " + document.getElementById("address").value);
+            doc.text(10, 45, "_________________________________________________________________________________________________");
+
+            doc.setFontType("bold");
+            doc.setFontSize(16);
+            doc.text(10, 55, "Objective");
+            doc.setFontType("normal");
+            doc.setFontSize(12);
+            var ob1 = doc.splitTextToSize(document.getElementById("object").value, 190);
+            doc.text(ob1, 10, 64);
+            // doc.text(10, 64, document.getElementById("object").value);
+            doc.text(10, 79, "_________________________________________________________________________________");
+
+            doc.setFontType("bold");
+            doc.setFontSize(16);
+            doc.text(10, 88, "Qualification");
+            doc.setFontSize(14);
+            doc.setFontType("normal");
+            doc.text(10, 100, "Class");
+            doc.text(40, 100, "Year of Passing");
+            doc.text(100, 100, "Board/University");
+            doc.text(170, 100, "Percentage(%)");
+            doc.setFontSize(12);
+            doc.text(10, 115, "Graduation");
+            doc.text(40, 115, document.getElementById("year1").value);
+            doc.text(100, 115, document.getElementById("bu1").value);
+            doc.text(178, 115, document.getElementById("per1").value);
+            doc.text(10, 117, "_________________________________________________________________________________");
+            doc.text(10, 125, "12th");
+            doc.text(40, 125, document.getElementById("year2").value);
+            doc.text(100, 125, document.getElementById("bu2").value);
+            doc.text(178, 125, document.getElementById("per2").value);
+            doc.text(10, 127, "_________________________________________________________________________________");
+            doc.text(10, 135, "10th");
+            doc.text(40, 135, document.getElementById("year3").value);
+            doc.text(100, 135, document.getElementById("bu3").value);
+            doc.text(178, 135, document.getElementById("per3").value);
+            doc.text(10, 137, "_________________________________________________________________________________");
+
+            doc.setFontType("bold");
+            doc.setFontSize(16);
+            doc.text(10, 155, "Technical Skills");
+            doc.setFontType("normal");
+            doc.setFontSize(12);
+            var ob2 = doc.splitTextToSize(document.getElementById("skill").value, 190);
+            doc.text(ob2, 10, 164);
+            // doc.text(10, 167, document.getElementById("skill").value);
+            doc.text(10, 180, "_________________________________________________________________________________");
+
+            doc.setFontType("bold");
+            doc.setFontSize(16);
+            doc.text(10, 190, "Experience/Projects");
+            doc.setFontType("normal");
+            doc.setFontSize(12);
+            var ob3 = doc.splitTextToSize(document.getElementById("expert").value, 190);
+            doc.text(ob3, 10, 199);
+            // doc.text(10, 203, document.getElementById("expert").value);
+            doc.text(10, 250, "_________________________________________________________________________________");
+
+            doc.setFontType("bold");
+            doc.setFontSize(16);
+            doc.text(10, 258, "Hobbies/Area of Interest");
+            doc.setFontType("normal");
+            doc.setFontSize(12);
+            var ob4 = doc.splitTextToSize(document.getElementById("aoi").value, 190);
+            doc.text(ob4, 10, 268);
+            // doc.text(10, 265, document.getElementById("aoi").value);
+            doc.text(10, 288, "_________________________________________________________________________________");
+
+            doc.save("Resume.pdf");
+        }
+    </script>
+
+</head>
+
+<body class="b2">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #c3dbec8c;">
+        <a class="navbar-brand" href="/">Resume-Generator</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/temp.html">Templates</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav><br><br>
+
+    <section class="resume1" id="resumeid">
+        <div class="container headings text-center my-4">
+            <h1 style="color: rgb(44, 13, 73);"><u>Resume Generator</u></h1>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-md-2 col-1">
+                    <h2 style="color: rgb(85, 85, 165);">Enter your personal details:-</h2>
+                    <!-- <form action="/action_page.php"> -->
+                    <div class="form-group">
+                        <label for="username">Name</label>
+                        <input type="text" class="form-control" id="username" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Your Email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputLinkedin">Linkedin ID</label>
+                        <input type="email" class="form-control" id="inputLinkedin" placeholder="Your Linkedin id">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <textarea cols="89" rows="5" class="form-control" id="address"
+                            placeholder="Your Address" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputcontact">Contact no.</label>
+                        <input type="email" class="form-control" id="inputcontact" placeholder="Your Phone no." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputobj">Objective</label>
+                        <textarea rows="5" id="object" class="form-control"></textarea>
+                    </div>
+
+                    <div class="qualification">
+                        <h2 style="color: rgb(85, 85, 165);">Qualification</h2>
+                        <table id="myTable">
+                            <col width="160">
+                            <tr>
+                                <th>Class</th>
+                                <th>Year of Passing</th>
+                                <th>Board/University</th>
+                                <th>Percentage(%)</th>
+                            </tr>
+                            <col width="170">
+                            <tr>
+                                <td>Graduation</td>
+                                <td><input type="text" class="table_input" id="year1" placeholder="Enter Passing Year" required>
+                                </td>
+                                <td><input type="text" class="table_input1" id="bu1" placeholder="Enter B/U Number" required>
+                                </td>
+                                <td><input type="text" class="table_input" id="per1" placeholder="Enter percentage" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>12<sup>th</sup></td>
+                                <td><input type="text" class="table_input" id="year2" placeholder="Enter Passing Year" required>
+                                </td>
+                                <td><input type="text" class="table_input1" id="bu2" placeholder="Enter B/U Number" required>
+                                </td>
+                                <td><input type="text" class="table_input" id="per2" placeholder="Enter percentage" required>
+                                </td>
+                            </tr>
+                            <col width="180">
+                            <tr>
+                                <td>10<sup>th</sup></td>
+                                <td><input type="text" class="table_input" id="year3" placeholder="Enter Passing Year" required>
+                                </td>
+                                <td><input type="text" class="table_input1" id="bu3" placeholder="Enter B/U Number" required>
+                                </td>
+                                <td><input type="text" class="table_input" id="per3" placeholder="Enter percentage" required>
+                                </td>
+                            </tr>
+
+                        </table><br>
+                        <!-- <p align="right">
+                            <button class="table_button btn btn-success form-button" id="createrow"
+                                onclick="myCreatefun()">Create row</button>
+                            <button class="table_button btn btn-danger form-button" id="deleterow"
+                                onclick="deleteFun()">Delete last row</button>
+                        </p> -->
+                    </div>
+                    <hr>
+                    <h2 style="color: rgb(85, 85, 165);">Experience/Projects</h2>
+                    <textarea id="expert" cols="100" rows="5" class="form-control" required></textarea>
+                    <hr>
+                    <h2 style="color: rgb(85, 85, 165);">Technical Skill</h2>
+                    <textarea id="skill" cols="100" rows="5" class="form-control" required></textarea>
+                    <hr>
+
+                    <h2 style="color: rgb(85, 85, 165);">Hobbies/Area of Interest</h2>
+                    <textarea id="aoi" cols="100" rows="5" class="form-control" required></textarea><br>
+
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" onclick="genpdf()" class="btn btn-primary form-button">Generate your
+                            Resume</button>
+                    </div><br>
+                    <!-- </form><br> -->
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<!-- PopperJs -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+</html>

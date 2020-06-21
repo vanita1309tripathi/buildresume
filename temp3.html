@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  
+
+    <script>
+
+        function genpdf() {
+            var doc = new jsPDF();
+
+            doc.setFontType("bold");
+            doc.setTextColor(139, 62, 47);
+            doc.setFontSize(30);
+            doc.text(10, 27, document.getElementById("username").value);
+
+            doc.setTextColor(205, 91, 69);
+            doc.setFontType("normal");
+            doc.setFontSize(12);
+            
+
+            doc.setFontType("bold");
+            doc.setFontSize(16);
+            doc.setTextColor(131, 111, 255);
+            doc.text(10, 40, "Contact");
+            doc.setFontType("normal");
+
+
+            doc.setTextColor(47, 79, 79);
+            doc.setFontType("normal");
+            doc.setFontSize(12);
+            doc.text(10, 50, "+91: " + document.getElementById("inputcontact").value);
+            doc.text(10, 56, document.getElementById("inputEmail4").value);
+            doc.text(10, 62, document.getElementById("address").value);
+
+
+
+            doc.setTextColor(131, 111, 255);
+            doc.setFontType("bold");
+            doc.setFontSize(16);
+            doc.text(10, 80, "Objective");
+
+
+            doc.setFontType("normal");
+            doc.setTextColor(47, 79, 79);
+            doc.setFontSize(12);
+            var ob1 = doc.splitTextToSize(document.getElementById("object").value, 190);
+            doc.text(ob1, 10, 87);
+            // doc.text(10, 90, document.getElementById("object").value);
+
+            doc.setTextColor(131, 111, 255);
+            doc.setFontType("bold");
+            doc.setFontSize(16);
+            doc.text(10, 106, "Qualification");
+
+            doc.setTextColor(0, 204, 255);
+            doc.setFontSize(14);
+            doc.text(10, 112, document.getElementById("year1").value);
+            doc.setFontSize(12);
+            doc.setTextColor(47, 79, 79);
+            doc.text(10, 118, "Graduation              :" + document.getElementById("bu1").value + " University    " + document.getElementById("per1").value + "%");
+
+            doc.setTextColor(0, 204, 255);
+            doc.setFontSize(14);
+            doc.text(10, 126, document.getElementById("year2").value);
+            doc.setFontSize(12);
+            doc.setTextColor(47, 79, 79);
+            doc.text(10, 130, "12th                         :" + document.getElementById("bu2").value + " Board   " + document.getElementById("per2").value + "%");
+
+            doc.setTextColor(0, 204, 255);
+            doc.setFontSize(14);
+            doc.text(10, 138, document.getElementById("year3").value);
+            doc.setFontSize(12);
+            doc.setTextColor(47, 79, 79);
+            doc.text(10, 144, "10th                         :" + document.getElementById("bu3").value + " Board    " + document.getElementById("per3").value + "%");
+
+
+
+            doc.setFontType("bold");
+            doc.setFontSize(16);
+            doc.setTextColor(131, 111, 255);
+            doc.text(10, 162, "Technical Skills");
+
+            doc.setTextColor(47, 79, 79);
+            doc.setFontType("normal");
+            doc.setFontSize(12);
+            var ob2 = doc.splitTextToSize(document.getElementById("skill").value, 190);
+            doc.text(ob2, 10, 168);
+            // doc.text(10, 176, document.getElementById("skill").value);
+
+            doc.setFontType("bold");
+            doc.setFontSize(16);
+            doc.setTextColor(131, 111, 255);
+            doc.text(10, 184, "Experience/Projects");
+
+            doc.setTextColor(47, 79, 79);
+            doc.setFontType("normal");
+            doc.setFontSize(12);
+            var ob3 = doc.splitTextToSize(document.getElementById("expert").value, 190);
+            doc.text(ob3, 10, 190);
+            // doc.text(10, 196, document.getElementById("expert").value);
+
+            doc.setFontType("bold");
+            doc.setFontSize(16);
+            doc.setTextColor(131, 111, 255);
+            doc.text(10, 245, "Hobbies/Area of Interest");
+
+            doc.setTextColor(47, 79, 79);
+            doc.setFontType("normal");
+            doc.setFontSize(12);
+            var ob4 = doc.splitTextToSize(document.getElementById("aoi").value, 190);
+            doc.text(ob4, 10, 251);
+            // doc.text(10, 226, document.getElementById("aoi").value);
+
+            doc.setFontType("bold");
+            doc.setFontSize(16);
+            doc.setTextColor(131, 111, 255);
+            doc.text(10, 271, "Certifications");
+
+            doc.setTextColor(47, 79, 79);
+            doc.setFontType("normal");
+            doc.setFontSize(12);
+            var ob5 = doc.splitTextToSize(document.getElementById("cer").value, 190);
+            doc.text(ob5, 10, 277);
+            // doc.text(10, 256, document.getElementById("cer").value);
+
+            doc.save("Resume.pdf");
+        }
+    </script>
+
+
+</head>
+
+<body class="b2">
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #c3dbec8c;">
+        <a class="navbar-brand" href="/">Resume-Generator</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/temp.html">Templates</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav><br><br><br>
+
+    <section class="resume1" id="resumeid">
+        <div class="container headings text-center my-4">
+            <h1 style="color: rgb(44, 13, 73);"><u>Resume Generator</u></h1>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-md-2 col-1">
+                    <h2 style="color: rgb(85, 85, 165);">Enter your personal details:-</h2>
+                  
+                    <div class="form-group">
+                        <label for="username">Name</label>
+                        <input type="text" class="form-control" id="username" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Your Email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <textarea cols="89" rows="5" class="form-control" id="address"
+                            placeholder="Your Address"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputcontact">Contact no.</label>
+                        <input type="email" class="form-control" id="inputcontact" placeholder="Your Phone no." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputobj">Objective</label>
+                        <textarea rows="5" id="object" class="form-control"></textarea>
+                    </div>
+
+                    <div class="qualification">
+                        <h2 style="color: rgb(85, 85, 165);">Qualification</h2>
+                        <table id="myTable">
+                            <col width="160">
+                            <tr>
+                                <th>Class</th>
+                                <th>Year of Passing</th>
+                                <th>Board/University</th>
+                                <th>Percentage(%)</th>
+                            </tr>
+                            <col width="170">
+                            <tr>
+                                <td>Graduation</td>
+                                <td><input type="text" class="table_input" id="year1" placeholder="Enter Passing Year" required>
+                                </td>
+                                <td><input type="text" class="table_input1" id="bu1" placeholder="Enter B/U Number" required>
+                                </td>
+                                <td><input type="text" class="table_input" id="per1" placeholder="Enter percentage" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>12<sup>th</sup></td>
+                                <td><input type="text" class="table_input" id="year2" placeholder="Enter Passing Year" required>
+                                </td>
+                                <td><input type="text" class="table_input1" id="bu2" placeholder="Enter B/U Number" required>
+                                </td>
+                                <td><input type="text" class="table_input" id="per2" placeholder="Enter percentage" required>
+                                </td>
+                            </tr>
+                            <col width="180">
+                            <tr>
+                                <td>10<sup>th</sup></td>
+                                <td><input type="text" class="table_input" id="year3" placeholder="Enter Passing Year" required>
+                                </td>
+                                <td><input type="text" class="table_input1" id="bu3" placeholder="Enter B/U Number" required>
+                                </td>
+                                <td><input type="text" class="table_input" id="per3" placeholder="Enter percentage" required>
+                                </td>
+                            </tr>
+
+                        </table><br>
+
+                    </div>
+                    <hr>
+                    <h2 style="color: rgb(85, 85, 165);">Experience</h2>
+                    <textarea id="expert" cols="100" rows="5" class="form-control" required></textarea>
+                    <hr>
+                    <h2 style="color: rgb(85, 85, 165);">Technical Skill</h2>
+                    <textarea id="skill" cols="100" rows="5" class="form-control" required></textarea>
+                    <hr>
+
+                    <h2 style="color: rgb(85, 85, 165);">Hobbies/Area of Interest</h2>
+                    <textarea id="aoi" cols="100" rows="5" class="form-control" required></textarea>
+                    <hr>
+
+                    <h2 style="color: rgb(85, 85, 165);">Certifications/Awards</h2>
+                    <textarea id="cer" cols="100" rows="5" class="form-control"></textarea><br>
+
+
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" onclick="genpdf()" class="btn btn-primary form-button">Generate your
+                            Resume</button>
+                    </div><br>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
+
+
