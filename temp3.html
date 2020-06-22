@@ -11,132 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="style.css">
-  
-
-    <script>
-
-        function genpdf() {
-            var doc = new jsPDF();
-
-            doc.setFontType("bold");
-            doc.setTextColor(139, 62, 47);
-            doc.setFontSize(30);
-            doc.text(10, 27, document.getElementById("username").value);
-
-            doc.setTextColor(205, 91, 69);
-            doc.setFontType("normal");
-            doc.setFontSize(12);
-            
-
-            doc.setFontType("bold");
-            doc.setFontSize(16);
-            doc.setTextColor(131, 111, 255);
-            doc.text(10, 40, "Contact");
-            doc.setFontType("normal");
-
-
-            doc.setTextColor(47, 79, 79);
-            doc.setFontType("normal");
-            doc.setFontSize(12);
-            doc.text(10, 50, "+91: " + document.getElementById("inputcontact").value);
-            doc.text(10, 56, document.getElementById("inputEmail4").value);
-            doc.text(10, 62, document.getElementById("address").value);
-
-
-
-            doc.setTextColor(131, 111, 255);
-            doc.setFontType("bold");
-            doc.setFontSize(16);
-            doc.text(10, 80, "Objective");
-
-
-            doc.setFontType("normal");
-            doc.setTextColor(47, 79, 79);
-            doc.setFontSize(12);
-            var ob1 = doc.splitTextToSize(document.getElementById("object").value, 190);
-            doc.text(ob1, 10, 87);
-            // doc.text(10, 90, document.getElementById("object").value);
-
-            doc.setTextColor(131, 111, 255);
-            doc.setFontType("bold");
-            doc.setFontSize(16);
-            doc.text(10, 106, "Qualification");
-
-            doc.setTextColor(0, 204, 255);
-            doc.setFontSize(14);
-            doc.text(10, 112, document.getElementById("year1").value);
-            doc.setFontSize(12);
-            doc.setTextColor(47, 79, 79);
-            doc.text(10, 118, "Graduation              :" + document.getElementById("bu1").value + " University    " + document.getElementById("per1").value + "%");
-
-            doc.setTextColor(0, 204, 255);
-            doc.setFontSize(14);
-            doc.text(10, 126, document.getElementById("year2").value);
-            doc.setFontSize(12);
-            doc.setTextColor(47, 79, 79);
-            doc.text(10, 130, "12th                         :" + document.getElementById("bu2").value + " Board   " + document.getElementById("per2").value + "%");
-
-            doc.setTextColor(0, 204, 255);
-            doc.setFontSize(14);
-            doc.text(10, 138, document.getElementById("year3").value);
-            doc.setFontSize(12);
-            doc.setTextColor(47, 79, 79);
-            doc.text(10, 144, "10th                         :" + document.getElementById("bu3").value + " Board    " + document.getElementById("per3").value + "%");
-
-
-
-            doc.setFontType("bold");
-            doc.setFontSize(16);
-            doc.setTextColor(131, 111, 255);
-            doc.text(10, 162, "Technical Skills");
-
-            doc.setTextColor(47, 79, 79);
-            doc.setFontType("normal");
-            doc.setFontSize(12);
-            var ob2 = doc.splitTextToSize(document.getElementById("skill").value, 190);
-            doc.text(ob2, 10, 168);
-            // doc.text(10, 176, document.getElementById("skill").value);
-
-            doc.setFontType("bold");
-            doc.setFontSize(16);
-            doc.setTextColor(131, 111, 255);
-            doc.text(10, 184, "Experience/Projects");
-
-            doc.setTextColor(47, 79, 79);
-            doc.setFontType("normal");
-            doc.setFontSize(12);
-            var ob3 = doc.splitTextToSize(document.getElementById("expert").value, 190);
-            doc.text(ob3, 10, 190);
-            // doc.text(10, 196, document.getElementById("expert").value);
-
-            doc.setFontType("bold");
-            doc.setFontSize(16);
-            doc.setTextColor(131, 111, 255);
-            doc.text(10, 245, "Hobbies/Area of Interest");
-
-            doc.setTextColor(47, 79, 79);
-            doc.setFontType("normal");
-            doc.setFontSize(12);
-            var ob4 = doc.splitTextToSize(document.getElementById("aoi").value, 190);
-            doc.text(ob4, 10, 251);
-            // doc.text(10, 226, document.getElementById("aoi").value);
-
-            doc.setFontType("bold");
-            doc.setFontSize(16);
-            doc.setTextColor(131, 111, 255);
-            doc.text(10, 271, "Certifications");
-
-            doc.setTextColor(47, 79, 79);
-            doc.setFontType("normal");
-            doc.setFontSize(12);
-            var ob5 = doc.splitTextToSize(document.getElementById("cer").value, 190);
-            doc.text(ob5, 10, 277);
-            // doc.text(10, 256, document.getElementById("cer").value);
-
-            doc.save("Resume.pdf");
-        }
-    </script>
-
 
 </head>
 
@@ -177,7 +51,7 @@
 
                 <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-md-2 col-1">
                     <h2 style="color: rgb(85, 85, 165);">Enter your personal details:-</h2>
-                  
+
                     <div class="form-group">
                         <label for="username">Name</label>
                         <input type="text" class="form-control" id="username" placeholder="Your Name" required>
@@ -195,7 +69,8 @@
 
                     <div class="form-group">
                         <label for="inputcontact">Contact no.</label>
-                        <input type="email" class="form-control" id="inputcontact" placeholder="Your Phone no." required>
+                        <input type="email" class="form-control" id="inputcontact" placeholder="Your Phone no."
+                            required>
                     </div>
 
                     <div class="form-group">
@@ -216,30 +91,39 @@
                             <col width="170">
                             <tr>
                                 <td>Graduation</td>
-                                <td><input type="text" class="table_input" id="year1" placeholder="Enter Passing Year" required>
+                                <td><input type="text" class="table_input" id="year1" placeholder="Enter Passing Year"
+                                        required>
                                 </td>
-                                <td><input type="text" class="table_input1" id="bu1" placeholder="Enter B/U Number" required>
+                                <td><input type="text" class="table_input1" id="bu1" placeholder="Enter B/U Number"
+                                        required>
                                 </td>
-                                <td><input type="text" class="table_input" id="per1" placeholder="Enter percentage" required>
+                                <td><input type="text" class="table_input" id="per1" placeholder="Enter percentage"
+                                        required>
                                 </td>
                             </tr>
                             <tr>
                                 <td>12<sup>th</sup></td>
-                                <td><input type="text" class="table_input" id="year2" placeholder="Enter Passing Year" required>
+                                <td><input type="text" class="table_input" id="year2" placeholder="Enter Passing Year"
+                                        required>
                                 </td>
-                                <td><input type="text" class="table_input1" id="bu2" placeholder="Enter B/U Number" required>
+                                <td><input type="text" class="table_input1" id="bu2" placeholder="Enter B/U Number"
+                                        required>
                                 </td>
-                                <td><input type="text" class="table_input" id="per2" placeholder="Enter percentage" required>
+                                <td><input type="text" class="table_input" id="per2" placeholder="Enter percentage"
+                                        required>
                                 </td>
                             </tr>
                             <col width="180">
                             <tr>
                                 <td>10<sup>th</sup></td>
-                                <td><input type="text" class="table_input" id="year3" placeholder="Enter Passing Year" required>
+                                <td><input type="text" class="table_input" id="year3" placeholder="Enter Passing Year"
+                                        required>
                                 </td>
-                                <td><input type="text" class="table_input1" id="bu3" placeholder="Enter B/U Number" required>
+                                <td><input type="text" class="table_input1" id="bu3" placeholder="Enter B/U Number"
+                                        required>
                                 </td>
-                                <td><input type="text" class="table_input" id="per3" placeholder="Enter percentage" required>
+                                <td><input type="text" class="table_input" id="per3" placeholder="Enter percentage"
+                                        required>
                                 </td>
                             </tr>
 
@@ -264,7 +148,7 @@
 
 
                     <div class="d-flex justify-content-center">
-                        <button type="submit" onclick="genpdf()" class="btn btn-primary form-button">Generate your
+                        <button type="submit" class="btn btn-primary form-button" id="form-button">Generate your
                             Resume</button>
                     </div><br>
                 </div>
@@ -274,7 +158,189 @@
     </section>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<!-- PopperJs -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+<script>
+
+    document.getElementById("form-button").addEventListener("click", function callback() {
+        event.preventDefault();
+        var validation = validate();
+        if (validation == true) {
+            genpdf()
+        }
+    });
+    function validate() {
+        var name = document.getElementById("username");
+        var email = document.getElementById("inputEmail4");
+        var add = document.getElementById("address");
+        var contact = document.getElementById("inputcontact");
+        var objective = document.getElementById("object");
+        var experience = document.getElementById("expert");
+        var skills = document.getElementById("skill");
+
+        if (name.value == "") {
+            alert("please enter your name");
+            return false;
+        }
+        else if (email.value == "") {
+            alert("please enter your email");
+            return false;
+        }
+        else if (add.value == "") {
+            alert("please enter the address");
+            return false;
+        }
+        else if (contact.value == "") {
+            alert("please fill the contact");
+            return false;
+        }
+        else if (objective.value == "") {
+            alert("please fill the objective");
+            return false;
+        }
+
+        else if (experience.value == "") {
+            alert("please fill the experience");
+            return false;
+        }
+        else if (skills.value == "") {
+            alert("please fill your skills");
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    function genpdf() {
+        var doc = new jsPDF();
+
+        doc.setFontType("bold");
+        doc.setTextColor(139, 62, 47);
+        doc.setFontSize(30);
+        doc.text(10, 27, document.getElementById("username").value);
+
+        doc.setTextColor(205, 91, 69);
+        doc.setFontType("normal");
+        doc.setFontSize(12);
+
+
+        doc.setFontType("bold");
+        doc.setFontSize(16);
+        doc.setTextColor(131, 111, 255);
+        doc.text(10, 40, "Contact");
+        doc.setFontType("normal");
+
+
+        doc.setTextColor(47, 79, 79);
+        doc.setFontType("normal");
+        doc.setFontSize(12);
+        doc.text(10, 50, "+91: " + document.getElementById("inputcontact").value);
+        doc.text(10, 56, document.getElementById("inputEmail4").value);
+        doc.text(10, 62, document.getElementById("address").value);
+
+
+
+        doc.setTextColor(131, 111, 255);
+        doc.setFontType("bold");
+        doc.setFontSize(16);
+        doc.text(10, 80, "Objective");
+
+
+        doc.setFontType("normal");
+        doc.setTextColor(47, 79, 79);
+        doc.setFontSize(12);
+        var ob1 = doc.splitTextToSize(document.getElementById("object").value, 190);
+        doc.text(ob1, 10, 87);
+        // doc.text(10, 90, document.getElementById("object").value);
+
+        doc.setTextColor(131, 111, 255);
+        doc.setFontType("bold");
+        doc.setFontSize(16);
+        doc.text(10, 106, "Qualification");
+
+        doc.setTextColor(0, 204, 255);
+        doc.setFontSize(14);
+        doc.text(10, 112, document.getElementById("year1").value);
+        doc.setFontSize(12);
+        doc.setTextColor(47, 79, 79);
+        doc.text(10, 118, "Graduation              :" + document.getElementById("bu1").value + " University    " + document.getElementById("per1").value + "%");
+
+        doc.setTextColor(0, 204, 255);
+        doc.setFontSize(14);
+        doc.text(10, 126, document.getElementById("year2").value);
+        doc.setFontSize(12);
+        doc.setTextColor(47, 79, 79);
+        doc.text(10, 130, "12th                         :" + document.getElementById("bu2").value + " Board   " + document.getElementById("per2").value + "%");
+
+        doc.setTextColor(0, 204, 255);
+        doc.setFontSize(14);
+        doc.text(10, 138, document.getElementById("year3").value);
+        doc.setFontSize(12);
+        doc.setTextColor(47, 79, 79);
+        doc.text(10, 144, "10th                         :" + document.getElementById("bu3").value + " Board    " + document.getElementById("per3").value + "%");
+
+
+
+        doc.setFontType("bold");
+        doc.setFontSize(16);
+        doc.setTextColor(131, 111, 255);
+        doc.text(10, 162, "Technical Skills");
+
+        doc.setTextColor(47, 79, 79);
+        doc.setFontType("normal");
+        doc.setFontSize(12);
+        var ob2 = doc.splitTextToSize(document.getElementById("skill").value, 190);
+        doc.text(ob2, 10, 168);
+        // doc.text(10, 176, document.getElementById("skill").value);
+
+        doc.setFontType("bold");
+        doc.setFontSize(16);
+        doc.setTextColor(131, 111, 255);
+        doc.text(10, 184, "Experience/Projects");
+
+        doc.setTextColor(47, 79, 79);
+        doc.setFontType("normal");
+        doc.setFontSize(12);
+        var ob3 = doc.splitTextToSize(document.getElementById("expert").value, 190);
+        doc.text(ob3, 10, 190);
+        // doc.text(10, 196, document.getElementById("expert").value);
+
+        doc.setFontType("bold");
+        doc.setFontSize(16);
+        doc.setTextColor(131, 111, 255);
+        doc.text(10, 245, "Hobbies/Area of Interest");
+
+        doc.setTextColor(47, 79, 79);
+        doc.setFontType("normal");
+        doc.setFontSize(12);
+        var ob4 = doc.splitTextToSize(document.getElementById("aoi").value, 190);
+        doc.text(ob4, 10, 251);
+        // doc.text(10, 226, document.getElementById("aoi").value);
+
+        doc.setFontType("bold");
+        doc.setFontSize(16);
+        doc.setTextColor(131, 111, 255);
+        doc.text(10, 271, "Certifications");
+
+        doc.setTextColor(47, 79, 79);
+        doc.setFontType("normal");
+        doc.setFontSize(12);
+        var ob5 = doc.splitTextToSize(document.getElementById("cer").value, 190);
+        doc.text(ob5, 10, 277);
+        // doc.text(10, 256, document.getElementById("cer").value);
+
+        doc.save("Resume.pdf");
+    }
+</script>
 
 </html>
-
-
