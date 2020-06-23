@@ -29,6 +29,9 @@
   
   .b1{
     background-color: rgba(230, 238, 238, 0.479);
+    background-image: url(images/bg3.jpg);
+    background-position: top bottom;
+
   }
 
     /* BG_image */
@@ -37,9 +40,9 @@
     }
 
     .bg_img1{
-      background-image: url(images/bg2.jpg);
+      background-image: url(images/bg3.jpg);
       background-repeat: no-repeat;
-      background-position: bottom;
+      background-position: top bottom;
 
     }
 
