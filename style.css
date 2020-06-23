@@ -33,12 +33,15 @@
 
     /* BG_image */
     #bg_img{
-      background-color: beige;
-      background-image: url(images/bg2.jpg);
-      background-repeat: no-repeat;
-      background-position: 70% 60%;
+      background-color: beige;          
     }
 
+    .bg_img1{
+      background-image: url(images/bg2.jpg);
+      background-repeat: no-repeat;
+      background-position: bottom;
+
+    }
 
 /* home page */
 
