@@ -9,15 +9,35 @@
     font-family: 'Poppins', sans-serif;
   }
 
-.template-file:hover{
-    /* transform: translate(0,10%); */
-    box-shadow: 25px 25px 20px 0px rgba(37, 9, 9, 0.3);
-}
+  /* hover effects on templates */
 
+  .template-file h4{
+    display: none;
+  }
+  
+  .template-file:hover{
+    opacity: 0.4;
+  }
+  .template-file:hover h4{
+    display: block;
+  }
+  
+  
+  /* .b2{
+    background-color: rgb(236, 240, 248);
+  } */
+  
+  .b1{
+    background-color: rgba(230, 238, 238, 0.479);
+  }
 
-.b2{
-  background-color: rgb(236, 240, 248);
-}
+    /* BG_image */
+    #bg_img{
+      background-color: beige;
+      background-image: url(images/bg2.jpg);
+      background-repeat: no-repeat;
+      background-position: 70% 60%;
+    }
 
 
 /* home page */
