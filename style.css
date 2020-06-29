@@ -22,26 +22,7 @@
   .template-file:hover h4{
     display: block;
   }
-
-  .qualification {
-    display: none;
-  }
-  #experience{
-    display: none;
-  }
-  #skills{
-    display: none;
-  }
-  #hobbies{
-    display: none;
-  }
-  #certifications{
-    display: none;
-  }
-  #btn3{
-    display: none;
-  }
-  
+ 
   
   /* .b2{
     background-color: rgb(236, 240, 248);
@@ -120,7 +101,8 @@
   
   /* Home */
   #home {
-    background-color: none;
+    padding-bottom: 80px;
+    background-color: gray;
   }
   #home .row img {
     width: 50%;

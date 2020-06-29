@@ -10,6 +10,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<!-- <link href="css/styles.css" rel="stylesheet" > -->
 	<link href="css/bootstrap-glyphicons.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
 
 	<script>
 
@@ -73,6 +74,43 @@
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fdc2;">
 		<div class="container">
 			<div class="navbar-header">
+				<a class="navbar-brand" href="/index.html"><b style="font-size:24px;">Resume-Generator</b></a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigate"
+					style="background-color: #34495e;">
+					<span style="background-color: #ecf0f1;" class="icon-bar"></span>
+					<span style="background-color: #ecf0f1;" class="icon-bar"></span>
+					<span style="background-color: #ecf0f1;" class="icon-bar"></span>
+				</button>
+			</div>
+
+			<div class="collapse navbar-collapse" id="navigate">
+				<ul class=" btn-margin-right nav navbar-nav navbar-right">
+					<li class="nav-item" style="padding-top: 10px;">
+						<p><a class="btn btn-outline-success btn-primary  my-2 my-sm-0 form-button button-custom"
+								href="index.html" role="button">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+					</li>
+					<li class="nav-item" style="padding-top: 10px;color: whitesmoke;">
+						<p><a class="btn btn-outline-success btn-primary  my-2 my-sm-0 form-button button-custom"
+								style="text-decoration: none;" data-toggle="modal" data-target="#myModal"
+								role="button">Edit
+								Details</a>&nbsp;&nbsp;&nbsp;&nbsp;
+					</li>
+					<li class="nav-item" style="padding-top: 10px;">
+						<p><a class="btn btn-outline-success btn-primary  my-2 my-sm-0 button-custom" href="temp.html"
+								role="button">Templates</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+					</li>
+					<li class="nav-item" style="padding-top: 10px;">
+						<input class="btn btn-outline-success btn-primary  my-2 my-sm-0 button-custom" type="button"
+							onclick="printDiv('printableArea')" value="Generate PDF" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fdc2;">
+		<div class="container">
+			<div class="navbar-header">
 				<a class="navbar-brand" href="/index.html"><strong>Resume-Generator</strong></a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigate"
 					style="background-color: #34495e;">
@@ -103,7 +141,7 @@
 				</ul>
 			</div>
 		</div>
-	</nav>
+	</nav> -->
 
 
 	<!-- Modal -->

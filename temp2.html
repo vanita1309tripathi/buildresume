@@ -14,6 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    
+
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="style1.css">
 
@@ -25,6 +32,43 @@
 <body>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fdc2;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/index.html"><b style="font-size:24px;">Resume-Generator</b></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigate"
+                    style="background-color: #34495e;">
+                    <span style="background-color: #ecf0f1;" class="icon-bar"></span>
+                    <span style="background-color: #ecf0f1;" class="icon-bar"></span>
+                    <span style="background-color: #ecf0f1;" class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navigate">
+                <ul class=" btn-margin-right nav navbar-nav navbar-right">
+                    <li class="nav-item" style="padding-top: 10px;">
+                        <p><a class="btn btn-outline-success btn-primary  my-2 my-sm-0 form-button button-custom"
+                                href="index.html" role="button">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </li>
+                    <li class="nav-item" style="padding-top: 10px;color: whitesmoke;">
+                        <p><a class="btn btn-outline-success btn-primary  my-2 my-sm-0 form-button button-custom"
+                                style="text-decoration: none;" data-toggle="modal" data-target="#myModal"
+                                role="button">Edit
+                                Details</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </li>
+                    <li class="nav-item" style="padding-top: 10px;">
+                        <p><a class="btn btn-outline-success btn-primary  my-2 my-sm-0 button-custom" href="temp.html"
+                                role="button">Templates</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    </li>
+                    <li class="nav-item" style="padding-top: 10px;">
+                        <input class="btn btn-outline-success btn-primary  my-2 my-sm-0 button-custom" type="button"
+                            onclick="printDiv('printableArea')" value="Generate PDF" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fdc2;">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/index.html"><strong>Resume-Generator</strong></a>
@@ -57,7 +101,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
 
     <!-- Modal -->
@@ -269,183 +313,144 @@
 
 
     <!-- <div class="row"> -->
-    <div class=" col-md-2 col-lg-2 col-xs-12">
+    <!-- <div class=" col-md-2 col-lg-2 col-xs-12">
 
 
-    </div>
+    </div> -->
     <!-- <div class="col-md-8 col-lg-8 col-xs-12 div4"> -->
     <!-- <div class="row" id="printableArea"> -->
-        
-        <div class="col-md-4 col-lg-12 col-xs-12">
-            <div class="container">
-                <div class="col-md-12 col-lg-12 col-xs-12 gray">
 
-                    <h4 class="text-left text-primary ex1" id='display' style="color: #000000; font-size: 36px;">
-                        <b>Your Name</b>
+    <div class="col-md-4 col-lg-12 col-xs-12">
+        <div class="container">
+            <div class="col-md-12 col-lg-12 col-xs-12 gray">
+
+                <h4 class="text-left text-primary ex1" id='display' style="color: #000000; font-size: 36px;">
+                    <b>Your Name</b>
+                </h4>
+
+                <h4 class="text-left text-primary ex1" id='display1' style="font-size: 16px;color: #000000;">
+                    <b>Position</b>
+                </h4>
+                <h4 class="text-left text-primary ex1" style="color: #020202;"><span
+                        class="glyphicon glyphicon-map-marker " style="color:#020202">&nbsp;</span><span id='display2'
+                        class="text-left text-primary ex2" style="color:rgb(205, 91, 69);font-size: 18px;">44
+                        Shirley
+                        Ave</span>
+                </h4>
+
+                <h4 class="text-primary ex1"><span class="glyphicon glyphicon-envelope "
+                        style="color:#020202">&nbsp;</span><span class="text-primary text-left ex2" id='display3'
+                        style="color:rgb(205, 91, 69);">abc@netlink.com</span></h4>
+
+                <h4 class="text-primary  ex1" style="color: #020202;"><span class="fa fa-linkedin "
+                        style="color:#020202">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="text-primary text-left ex2" id='displaylink'
+                        style="color:rgb(205, 91, 69);">Linkedin id</span>
+                </h4>
+                <h4 class="text-primary  ex1" style="color: #020202;"><span class="glyphicon glyphicon-earphone "
+                        style="color:#020202">&nbsp;</span><span class="text-primary text-left ex2" id='display4'
+                        style="color:rgb(205, 91, 69);">+918358347476</span>
+                </h4>
+
+            </div>
+
+            <div class="col-md-12 col-lg-12 col-xs-12" style=" margin-top:15px;">
+
+                <div class="container">
+                    <!-- <h4 class="text-left text-primary ex1" style="color: rgb(131, 111, 255);font-size: 25px;">
+                    </h4> -->
+
+                    <p id='displayobj' class="text-left text-primary ex3" style="color: #020202;">
+                        Secure a responsible career opportunity to fully utilize my training and skills, while
+                        making a significant contribution to the success of the company.training and skills, while
+                        making a significant contribution to the success of the company.
+                    </p>
+
+                    <h4 class="text-left text-primary ex1" style="color: #020202; padding-top:25px;"><span
+                            class="glyphicon glyphicon-education " style="color:#020202;"></span>&ensp;
+                        <b style="font-size: 25px;">Education</b><span>
                     </h4>
+                    <hr style="border-top: 1px solid #000000;">
 
-                    <h4 class="text-left text-primary ex1" id='display1' style="font-size: 16px;color: #000000;">
-                        <b>Position</b>
-                    </h4>
-                    <h4 class="text-left text-primary ex1" style="color: #020202;"><span
-                            class="glyphicon glyphicon-map-marker " style="color:#020202"></span><span id='display2'
-                            class="text-left text-primary ex2" style="color:rgb(205, 91, 69);font-size: 18px;">44
-                            Shirley
-                            Ave</span>
-                    </h4>
-
-                    <h4 class="text-primary ex1"><span class="glyphicon glyphicon-envelope "
-                            style="color:#020202"></span><span class="text-primary text-left ex2" id='display3'
-                            style="color:rgb(205, 91, 69);">abc@netlink.com</span></h4>
-
-                    <h4 class="text-primary  ex1" style="color: #020202;"><span class="fa fa-linkedin "
-                            style="color:#020202"></span><span class="text-primary text-left ex2" id='displaylink'
-                            style="color:rgb(205, 91, 69);">Linkedin id</span>
-                    </h4>
-                    <h4 class="text-primary  ex1" style="color: #020202;"><span class="glyphicon glyphicon-earphone "
-                            style="color:#020202"></span><span class="text-primary text-left ex2" id='display4'
-                            style="color:rgb(205, 91, 69);">+918358347476</span>
-                    </h4>
-
-
-
-
-
-                </div>
-
-                <div class="col-md-12 col-lg-12 col-xs-12" style=" margin-top:10px;">
-
-                    <div class="container">
-                        <h4 class="text-left text-primary ex1" style="color: rgb(131, 111, 255);font-size: 25px;">
-                        </h4>
-
-                        <p id='displayobj' class="text-left text-primary ex3" style="color: #020202;">
-                            Secure a responsible career opportunity to fully utilize my training and skills, while
-                            making a significant contribution to the success of the company.
-                        </p>
-
-                        <h4 class="text-left text-primary ex1" style="color: #020202; padding-top:25px;"><span
-                                class="glyphicon glyphicon-education " style="color:#020202;"></span>&ensp;
-                            <b style="font-size: 25px;">Education</b><span>
-                        </h4>
-                        <hr style="border-top: 1px solid #000000;">
-
-                        <h3><span id="displayyear1">
+                    <h3><span id="displayyear1">
                             <b>Year</b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><b>Graduation</b></span>
-                        </h3>
-                        <h4 ><span id="displaybu1">
+                    </h3>
+                    <h4><span id="displaybu1">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             University</span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Percentage:
-                                <span id="displayper1"></span> </span>
-                        </h4>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Percentage:
+                            <span id="displayper1"></span> </span>
+                    </h4>
 
-                        
-                        <h3><span id="displayyear2">
+
+                    <h3><span id="displayyear2">
                             <b>Year</b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><b>12th</b></span>
-                        </h3>
-                        
+                    </h3>
 
 
-                        <h4> <span id="displaybu2">
+                    <h4> <span id="displaybu2">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             Board</span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Percentage:<span
-                                    id="displayper2"></span></span>
-                        </h4>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Percentage:<span
+                                id="displayper2"></span></span>
+                    </h4>
 
 
-                        <h3><span id="displayyear3">
+                    <h3><span id="displayyear3">
                             <b>Year</b></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><b>10th</b></span>
-                        </h3>
-                        <h4><span id="displaybu3">
+                    </h3>
+                    <h4><span id="displaybu3">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             Board</span>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Percentage:<span
-                                    id="displayper3"></span></span>
-                        </h4>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Percentage:<span
+                                id="displayper3"></span></span>
+                    </h4>
 
-                        <!-- <p id="displayyear1" style="font-size: 20px;">
-                            <b>year</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><b>Graduation</b></span>
-                        </p>
-                        <p>
-                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    id="displaybu1">Board
-                        </p>
-
-                        <span
-                            id="displayper1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Percentage
-                        </span></span><span>%</span><br>
-
-                        <p id="displayyear2" style="font-size: 20px;">
-                            <b>year</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><b>12th</b></span>
-                        </p>
-                        <p>
-                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    id="displaybu2">Board
-                        </p>
-
-                        <span
-                            id="displayper2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Percentage
-                        </span></span><span>%</span><br>
-
-                        <p id="displayyear3" style="font-size: 20px;">
-                            <b>year</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><b>10th</b></span>
-                        </p>
-                        <p>
-                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-                                    id="displaybu3">Board
-                        </p>
-
-                        <span
-                            id="displayper3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Percentage
-                        </span></span><span>%</span><br> -->
-
-                        <h4 class="text-left text-primary ex1" style="color: #020202; padding-top:25px;"><span
-                                class="glyphicon glyphicon-comment " style="color:#020202;"></span>&ensp;
-                            <b style="font-size: 25px;">Skills</b><span>
-                        </h4>
-                        <hr style="border-top: 1px solid #000000;">
+                    
+                    <h4 class="text-left text-primary ex1" style="color: #020202; padding-top:25px;"><span
+                            class="glyphicon glyphicon-comment " style="color:#020202;"></span>&ensp;
+                        <b style="font-size: 25px;">Skills</b><span>
+                    </h4>
+                    <hr style="border-top: 1px solid #000000;">
 
 
-                        <ul>
-                            <li id="display5">first</li>
-                            <li id="display6">Second</li>
-                            <li id="display7">Third</li>
-                            <li id="display8">Fourth</li>
-                            <li id="display9">Fifth</li>
-                            <li id="display10">Sixth</li>
-                        </ul>
+                    <ul>
+                        <li id="display5">first</li>
+                        <li id="display6">Second</li>
+                        <li id="display7">Third</li>
+                        <li id="display8">Fourth</li>
+                        <li id="display9">Fifth</li>
+                        <li id="display10">Sixth</li>
+                    </ul>
 
 
-                        <h4 class="text-left text-primary ex1" style="color: #020202; padding-top:25px;"><span
-                                class="glyphicon glyphicon-briefcase " style="color:#020202;"></span>&ensp;
-                            <b style="font-size: 25px;">Experience/Projects</b><span>
-                        </h4>
-                        <hr style="border-top: 1px solid #000000;">
+                    <h4 class="text-left text-primary ex1" style="color: #020202; padding-top:25px;"><span
+                            class="glyphicon glyphicon-briefcase " style="color:#020202;"></span>&ensp;
+                        <b style="font-size: 25px;">Experience/Projects</b><span>
+                    </h4>
+                    <hr style="border-top: 1px solid #000000;">
 
-                        <p id='display12-1' class="text-primary ex3" style="color: #020202; padding-left:25px;">
-                            Exp1
-                        </p>
-                        <p id='display12-2' class="text-primary ex3" style="color: #020202; padding-left:25px;">
-                            Exp2
-                        </p>
+                    <p id='display12-1' class="text-primary ex3" style="color: #020202; padding-left:25px;">
+                        Exp1
+                    </p>
+                    <p id='display12-2' class="text-primary ex3" style="color: #020202; padding-left:25px;">
+                        Exp2
+                    </p>
 
 
-                        <h4 class="text-left text-primary ex1" style="color: #020202; padding-top:25px;"><span
-                                class="glyphicon glyphicon-briefcase " style="color:#020202;"></span>&ensp;
-                            <b style="font-size: 25px;">Software</b><span>
-                        </h4>
-                        <hr style="border-top: 1px solid #000000;">
-                        <p id='display13' class="text-primary ex3" style="color: #020202;">
-                            There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered
-                            alteration in some form, by injected
-                        </p>
-                    </div>
+                    <h4 class="text-left text-primary ex1" style="color: #020202; padding-top:25px;"><span
+                            class="glyphicon glyphicon-briefcase " style="color:#020202;"></span>&ensp;
+                        <b style="font-size: 25px;">Software</b><span>
+                    </h4>
+                    <hr style="border-top: 1px solid #000000;">
+                    <p id='display13' class="text-primary ex3" style="color: #020202;">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have
+                        suffered
+                        alteration in some form, by injected
+                    </p>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
 
