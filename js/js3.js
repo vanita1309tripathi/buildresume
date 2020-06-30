@@ -2,7 +2,7 @@ document.getElementById("form-button").addEventListener("click", function callba
     event.preventDefault();
     var validation = validate();
     if (validation == true) {
-        printDiv('printableArea')
+       showInput();
     }
 });
 function validate() {
