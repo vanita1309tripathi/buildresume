@@ -12,61 +12,6 @@
 	<link href="css/bootstrap-glyphicons.css" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
-	<script>
-
-		function showInput() {
-			document.getElementById('display').innerHTML = document.getElementById("user_input").value;
-
-			document.getElementById('display1').innerHTML = document.getElementById("user_input1").value;
-
-			document.getElementById('display2').innerHTML = document.getElementById("user_input2").value;
-
-			document.getElementById('display3').innerHTML = document.getElementById("user_input3").value;
-
-			document.getElementById('display4').innerHTML = document.getElementById("user_input4").value;
-
-			document.getElementById('display5').innerHTML = document.getElementById("user_input5").value;
-
-			document.getElementById('display6').innerHTML = document.getElementById("user_input6").value;
-
-			document.getElementById('display7').innerHTML = document.getElementById("user_input7").value;
-
-			document.getElementById('display8').innerHTML = document.getElementById("user_input8").value;
-
-			document.getElementById('display9').innerHTML = document.getElementById("user_input9").value;
-
-			document.getElementById('display10').innerHTML = document.getElementById('user_input10').value;
-
-			document.getElementById('display11-1').innerHTML = document.getElementById('user_input11-1').value;
-			document.getElementById('display11-2').innerHTML = document.getElementById('user_input11-2').value;
-			document.getElementById('display11-3').innerHTML = document.getElementById('user_input11-3').value;
-
-			document.getElementById('display12-1').innerHTML = document.getElementById('user_input12-1').value;
-			document.getElementById('display12-2').innerHTML = document.getElementById('user_input12-2').value;
-			document.getElementById('display12-3').innerHTML = document.getElementById('user_input12-3').value;
-
-			document.getElementById('display13').innerHTML = document.getElementById('user_input13').value;
-
-			document.getElementById('display14').innerHTML = document.getElementById('user_input14').value;
-
-
-			var preview = document.querySelector('img');
-			var file = document.querySelector('input[type=file]').files[0];
-			var reader = new FileReader();
-
-			reader.onloadend = function () {
-				preview.src = reader.result;
-
-			}
-
-			if (file) {
-				reader.readAsDataURL(file);
-			} else {
-				preview.src = "Image/img3.jpg";
-			}
-		}
-	</script>
-
 </head>
 
 <body>
@@ -107,41 +52,6 @@
 			</div>
 		</div>
 	</nav>
-
-	<!-- <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fdc2;">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/index.html"><strong>Resume-Generator</strong></a>
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigate"
-					style="background-color: #34495e;">
-					<span style="background-color: #ecf0f1;" class="icon-bar"></span>
-					<span style="background-color: #ecf0f1;" class="icon-bar"></span>
-					<span style="background-color: #ecf0f1;" class="icon-bar"></span>
-				</button>
-			</div>
-
-			<div class="collapse navbar-collapse" id="navigate">
-				<ul class=" btn-margin-right nav navbar-nav navbar-right">
-					<li class="nav-item active">
-						<p><a class="btn btn-outline-success btn-primary  my-2 my-sm-0 form-button button-custom"
-								href="index.html" role="button">Home</a></p>
-					</li>
-					<li class="nav-item active">
-						<p><a class="btn btn-outline-success btn-primary  my-2 my-sm-0 form-button button-custom"
-								data-toggle="modal" data-target="#myModal" role="button">Edit Details</a>
-					</li>
-					<li class="nav-item active">
-						<p><a class="btn btn-outline-success btn-primary  my-2 my-sm-0 button-custom" href="temp.html"
-								role="button">Templates</a></p>
-					</li>
-					<li class="nav-item active">
-						<input class="btn btn-outline-success btn-primary  my-2 my-sm-0 button-custom" type="button"
-							onclick="printDiv('printableArea')" value="Generate PDF" />
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav> -->
 
 
 	<!-- Modal -->
@@ -249,9 +159,8 @@
 
 	<div class="row">
 		<div class="col-md-2 col-lg-2 col-xs-12">
-
-
 		</div>
+
 		<div class="col-md-8 col-lg-8 col-xs-12 div4">
 			<div class="row" id="printableArea">
 				<div class="col-md-4 col-lg-4 col-xs-4 " style="background-color:#F5F5F5 ;">
@@ -327,7 +236,6 @@
 								<span class="glyphicon glyphicon-menu-right " style="color:#4FC3F7"></span>&ensp;Python
 								&ensp;&ensp;
 							</p>
-
 						</div>
 					</div>
 
@@ -389,21 +297,10 @@
 			</div><br>
 		</div>
 
-
-		<script>
-
-			function printDiv(divName) {
-
-				var printContents = document.getElementById(divName).innerHTML;
-				var originalContents = document.body.innerHTML;
-				document.body.innerHTML = printContents;
-				window.print();
-				document.body.innerHTML = originalContents;
-			}
-
-		</script>
 		<script src="js/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/js4.js"></script>
+		
 </body>
 
 </html>
