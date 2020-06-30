@@ -1,3 +1,49 @@
+document.getElementById("form-button").addEventListener("click", function callback() {
+    event.preventDefault();
+    var validation = validate();
+    if (validation == true) {
+        printDiv('printableArea')
+    }
+});
+function validate() {
+    var name = document.getElementById("user_input");
+    var email = document.getElementById("user_input3");
+    var add = document.getElementById("user_input2");
+    var contact = document.getElementById("user_input4");
+    var education = document.getElementById("user_input11-1");
+    var experience = document.getElementById("user_input12-1");
+
+    if (name.value == "") {
+        alert("please enter your name");
+        return false;
+    }
+    else if (email.value == "") {
+        alert("please enter your email");
+        return false;
+    }
+    else if (add.value == "") {
+        alert("please enter the address");
+        return false;
+    }
+    else if (contact.value == "") {
+        alert("please fill the contact");
+        return false;
+    }
+    else if (education.value == "") {
+        alert("please fill your Qualifications");
+        return false;
+    }
+
+    else if (experience.value == "") {
+        alert("please fill your experience");
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+
 function showInput() {
     document.getElementById('display').innerHTML = document.getElementById("user_input").value;
 

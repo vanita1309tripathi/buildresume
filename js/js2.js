@@ -1,3 +1,53 @@
+document.getElementById("form-button").addEventListener("click", function callback() {
+    event.preventDefault();
+    var validation = validate();
+    if (validation == true) {
+        printDiv('printableArea')
+    }
+});
+function validate() {
+    var name = document.getElementById("user_input");
+    var email = document.getElementById("user_input3");
+    var linkedin = document.getElementById("user_inputlink");
+    var add = document.getElementById("user_input2");
+    var contact = document.getElementById("user_input4");
+    var objective = document.getElementById("obj");
+    var experience = document.getElementById("user_input12-1");
+
+    if (name.value == "") {
+        alert("please enter your name");
+        return false;
+    }
+    else if (email.value == "") {
+        alert("please enter your email");
+        return false;
+    }
+    else if (linkedin.value == "") {
+        alert("please enter your linkedin id");
+        return false;
+    }
+    else if (add.value == "") {
+        alert("please enter the address");
+        return false;
+    }
+    else if (contact.value == "") {
+        alert("please fill the contact");
+        return false;
+    }
+    else if (objective.value == "") {
+        alert("please fill the objective");
+        return false;
+    }
+
+    else if (experience.value == "") {
+        alert("please fill the experience");
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
 function showInput() {
     // console.log("1st");
     document.getElementById('display').innerHTML = document.getElementById("user_input").value;
@@ -190,12 +240,12 @@ function printDiv(divName) {
     doc.setFontSize(16);
     var img6 = 'data:image/png;base64,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';
     doc.addImage(img6, 'JPEG', 3, 260, 5, 5);
-    doc.text(9, 264, "Software");
+    doc.text(9, 270, "Software");
     doc.setFontType("normal");
-    doc.text(9, 266, "_____________________________________________________________");
+    doc.text(9, 272, "_____________________________________________________________");
     doc.setFontSize(12);
     var ob4 = doc.splitTextToSize(document.getElementById("user_input13").value, 140);
-    doc.text(ob4, 60, 273);
+    doc.text(ob4, 60, 279);
 
     doc.save("Resume.pdf");
 

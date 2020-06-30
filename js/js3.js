@@ -1,3 +1,49 @@
+document.getElementById("form-button").addEventListener("click", function callback() {
+    event.preventDefault();
+    var validation = validate();
+    if (validation == true) {
+        printDiv('printableArea')
+    }
+});
+function validate() {
+    var name = document.getElementById("user_input");
+    var email = document.getElementById("user_input3");
+    var add = document.getElementById("user_input2");
+    var contact = document.getElementById("user_input4");
+    var objective = document.getElementById("obj");
+    var experience = document.getElementById("user_input12-1");
+
+    if (name.value == "") {
+        alert("please enter your name");
+        return false;
+    }
+    else if (email.value == "") {
+        alert("please enter your email");
+        return false;
+    }
+    else if (add.value == "") {
+        alert("please enter the address");
+        return false;
+    }
+    else if (contact.value == "") {
+        alert("please fill the contact");
+        return false;
+    }
+    else if (objective.value == "") {
+        alert("please fill the objective");
+        return false;
+    }
+
+    else if (experience.value == "") {
+        alert("please fill the experience");
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+
 function showInput() {
     // console.log("1st");
     document.getElementById('display').innerHTML = document.getElementById("user_input").value;
@@ -47,6 +93,7 @@ function showInput() {
 
     document.getElementById('display14').innerHTML = document.getElementById('user_input14').value;
 
+    
 }
 
 
@@ -176,24 +223,24 @@ function printDiv(divName) {
     doc.setFontType("bold");
     doc.setFontSize(16);
     doc.setTextColor(131, 111, 255);
-    doc.text(10, 245, "Hobbies/Area of Interest");
+    doc.text(10, 251, "Hobbies/Area of Interest");
 
     doc.setTextColor(47, 79, 79);
     doc.setFontType("normal");
     doc.setFontSize(12);
-    var ob4 = doc.splitTextToSize(document.getElementById("user_input14").value, 190);
-    doc.text(ob4, 10, 251);
+    var ob4 = doc.splitTextToSize(document.getElementById("user_input13").value, 190);
+    doc.text(ob4, 10, 257);
 
     doc.setFontType("bold");
     doc.setFontSize(16);
     doc.setTextColor(131, 111, 255);
-    doc.text(10, 271, "Certifications");
+    doc.text(10, 277, "Certifications");
 
     doc.setTextColor(47, 79, 79);
     doc.setFontType("normal");
     doc.setFontSize(12);
-    var ob5 = doc.splitTextToSize(document.getElementById("user_input13").value, 190);
-    doc.text(ob5, 10, 277);
+    var ob5 = doc.splitTextToSize(document.getElementById("user_input14").value, 190);
+    doc.text(ob5, 10, 283);
     // doc.text(10, 256, document.getElementById("cer").value);
 
     doc.save("Resume.pdf");
